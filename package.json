@@ -1,0 +1,35 @@
+{
+  "name": "morelove-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify -o js/bundle.js -v -d js/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thans/morelove-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thans/morelove-client/issues"
+  },
+  "homepage": "https://github.com/thans/morelove-client#readme",
+  "dependencies": {
+    "react": "^0.13.0",
+    "parse": "^1.6.0",
+    "parse-react": "^0.5.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.0.2",
+    "browserify": "^6.2.0",
+    "watchify": "^2.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+
+}
