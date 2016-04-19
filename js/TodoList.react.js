@@ -10,25 +10,30 @@ var TodoCreator = require('./TodoCreator.react.js');
 // Top-Level component that binds to Parse using the ParseReact Mixin.
 // This should help demonstrate the "It's Just That Easy" potential here.
 export default class TodoList extends ParseComponent {
+
   observe(props, state) {
     return {
-      items: new Parse.Query('TodoItem').ascending('createdAt')
+      items: (new Parse.Query('TodoItem')).ascending('createdAt')
     };
   }
 
   render() {
     // If a query is outstanding, this.props.queryPending will be true
     // We can use this to display a loading indicator
+    if (this.data.items) {
+      var body = this.data.items.map(function(i) {
+        // Loop over the objects returned by the items query, rendering them
+        // with TodoItem components.
+        return (
+          <TodoItem key={i.id} item={i} update={this._updateItem} destroy={this._destroyItem} />
+        );
+      }, this)
+    }
+
     return (
       <div className={this.pendingQueries().length ? 'todo_list loading' : 'todo_list'}>
-        <a onClick={this._refresh.bind(this)} className="refresh">Refresh</a>
-        {this.data.items.map(function(i) {
-          // Loop over the objects returned by the items query, rendering them
-          // with TodoItem components.
-          return (
-            <TodoItem key={i.id} item={i} update={this._updateItem} destroy={this._destroyItem} />
-          );
-        }, this)}
+        <a onClick={this._refresh} className="refresh">Refresh</a>
+          {body}
         <TodoCreator submit={this._createItem} />
       </div>
     );
