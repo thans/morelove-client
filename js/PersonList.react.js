@@ -32,9 +32,7 @@ export default class TodoList extends ParseComponent {
 
     return (
       <div className={this.pendingQueries().length ? 'todo_list loading' : 'todo_list'}>
-        <a onClick={this._refresh} className="refresh">Refresh</a>
           {body}
-        <PersonCreator submit={this._createItem} />
       </div>
     );
   }
