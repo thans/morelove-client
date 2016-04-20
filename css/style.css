@@ -32,6 +32,7 @@ body {
 .todo_item {
   position: relative;
   padding: 5px 0;
+  clear:both;
 }
 .todo_item.editing {
   padding: 0;
@@ -40,6 +41,7 @@ body {
   font-size: 20px;
   line-height: 24px;
 }
+
 .item_date {
   font-size: 14px;
   color: #a9b2ba;
@@ -183,4 +185,21 @@ body {
     -webkit-transform: scale(1);
     opacity: 0;
   }
+}
+
+
+.person_photo_container {
+  float: left;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.person_photo_container img { 
+    width: 100%;
+    margin-right: 10px;
+}
+
+.main_information {
+  padding-left: 10px;
 }
