@@ -5,7 +5,6 @@ var React = require('react');
 var ParseComponent = ParseReact.Component(React);
 
 var TodoItem = require('./TodoItem.react.js');
-var TodoCreator = require('./TodoCreator.react.js');
 
 // Top-Level component that binds to Parse using the ParseReact Mixin.
 // This should help demonstrate the "It's Just That Easy" potential here.
@@ -33,8 +32,7 @@ export default class TodoList extends ParseComponent {
     return (
       <div className={this.pendingQueries().length ? 'todo_list loading' : 'todo_list'}>
         <a onClick={this._refresh} className="refresh">Refresh</a>
-          {body}
-        <TodoCreator submit={this._createItem} />
+        {body}
       </div>
     );
   }
