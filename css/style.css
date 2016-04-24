@@ -1,3 +1,5 @@
+@import url("font-awesome.css");
+
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -187,21 +189,45 @@ body {
   }
 }
 
+.person_card {
+  display: flex;
+}
+
+.person_main_information {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .person_photo_container {
-  float: left;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
 }
 
 .person_photo_container img { 
-    width: 100%;
-    margin-right: 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .main_information {
-  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
 }
+
+.person_name {
+
+}
+
+.person_needs {
+  flex-grow: 1;
+}
+
+.person_contact_information {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 
 #navbar {
   position: fixed;

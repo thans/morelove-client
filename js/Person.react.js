@@ -1,5 +1,6 @@
 
 var React = require('react');
+var FontAwesome = require('react-fontawesome');
 
 var PrettyDate = require('./PrettyDate.react.js');
 
@@ -28,21 +29,26 @@ var Person = React.createClass({
       );
     }
     return (
-      <div className="todo_item">
-        <div className="item_text">
+      <div className="person_card">
+        <div className="person_main_information">
           <div className="person_photo_container">
-            <img className="person_photo" src={this.props.item.photoUrl}/>
+            <img src={this.props.item.photoUrl}/>
           </div>
-          <div className="main_information">
+          <div className="person_contact_information">
             <div className="person_name">
-            {this.props.item.name}
+              {this.props.item.name}
             </div>
             <div className="person_phone">
-            {this.props.item.phoneNumber}
+              <FontAwesome name='phone' size='.25x' />
+              {this.props.item.phoneNumber}
+            </div>
+            <div className="person_phone">
+              <FontAwesome name='map-marker' size='.25x' />
+              Pioneer Square
             </div>
             <div className="person_needs">
-            Needs: 
-            {this.props.item.needs}
+              Needs: 
+              {this.props.item.needs}
             </div>
           </div>
         </div>
